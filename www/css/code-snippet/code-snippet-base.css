@@ -14,7 +14,7 @@
 .CodeSnippetHolder *::before, 
 .CodeSnippetHolder *::after {
   position: relative;
-  display: block;
+  display: inline-block;
   box-sizing: border-box;
 
   height: auto;
@@ -29,8 +29,6 @@
   overflow: hidden;
   overflow-y: hidden;
   overflow-x: hidden;
-
-  border: 0 solid #333;
 }
 
 
@@ -119,14 +117,16 @@ to draw right margin, when the width is scrollable to right. */
   z-index: 9999;
 }
 
+
 /* the html pre element, where the inner text is the code snippet */
-.CodeSnippetHolder pre.CodeSnippetArea {
+.CodeSnippetHolder .CodeSnippetArea {
   top: 0 !important;
   left: 0;
 
   height: var(--code-snippet--height);
   min-height: 100%;
-  max-height: var(--code-snippet--height);
+  max-height: unset;
+  /*max-height: var(--code-snippet--height);*/
   
   min-width: auto;
   width: var(--code-snippet--width);
